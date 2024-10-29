@@ -1,8 +1,12 @@
-import { useState } from 'react'
+import { Suspense } from 'react'
+import RootRouter from './router/RootRouter'
 
 function App() {
-  const [count, setCount] = useState(0)
-  return <div>APP</div>
+  return (
+    <Suspense fallback={<div>Loading....</div>}>
+      <RootRouter />
+    </Suspense>
+  )
 }
 
 export default App
