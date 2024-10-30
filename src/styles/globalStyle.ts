@@ -9,12 +9,15 @@ export const resetCss = css`
     --border-grey-light: lightgrey;
     --border-grey: grey;
     --hover-grey: rgb(240, 240, 240);
+    --background: #0e1014;
+    --text: #dbdbdb;
+    --heading-text: #fff;
   }
 
   /* 
   @media (prefer-color-scheme: dark) {
     :root {
-      --background: #202b38;
+      --background: : #0e1014;;
       --text: #dbdbdb;
       --heading-text: #fff;
     }
@@ -40,7 +43,7 @@ export const resetCss = css`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    box-sizing: border-box;
+
   }
 
   /* HTML5 display-role reset for older browsers */
@@ -50,22 +53,28 @@ export const resetCss = css`
 	  display: block;
   }
 
-  html {
+  /* *,
+  html, */
+  body {
     font-family: 'Dongle', sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-
-  body {
-    line-height: 1;
-    font-size: 1rem;
-
-    /* background: var(--background);
-    color: var(--text); */
+    font-size: 16px;
+    box-sizing: border-box;
+    background: var(--background);
+    color: var(--text);
   }
 
   a {
+    color: var(--text);
     text-decoration: none;
+    outline: none;
+  }
+
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: #fff;
   }
 
   button {
@@ -81,7 +90,7 @@ export const resetCss = css`
   h1,
   h2,
   h3 {
-    /* color: var(--heading-text); */
+    color: var(--heading-text);
   }
 
   ol,
@@ -107,6 +116,8 @@ export const resetCss = css`
   }
 
   textarea {
+    background: var(--background);
+    color: var(--text);
     display: block;
     box-sizing: border-box;
     border: none;

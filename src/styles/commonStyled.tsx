@@ -3,7 +3,11 @@ import { CSSProperties } from 'react'
 import { getStylePxStrValue } from './utils'
 import { palette } from './palette'
 
-export const CommText = styled.p<{ fontSize?: number }>`
+export const CommText = styled.p<{
+  color?: CSSProperties['color']
+  fontSize?: number
+}>`
+  color: ${(props) => props.color};
   font-size: ${(props) => getStylePxStrValue(props.fontSize)};
 `
 export const CommFlexRowContainer = styled.div<{
@@ -56,17 +60,21 @@ export const CommBtn = styled.button<{
   align-items: center;
   justify-content: ${(props) =>
     props.justifyContent ? props.justifyContent : 'center'};
-  color: ${(props) => props.iconColor};
   border-radius: 4px;
   transition:
     background 0.2s ease-in,
     color 0.2s ease-in;
 
-  background: ${(props) => (props.isSelected ? palette.accentGrey : 'white')};
-  color: ${(props) => (props.isSelected ? palette.hoverGrey : 'inherit')};
+  background: ${(props) => (props.isSelected ? palette.bgActive : undefined)};
+  color: ${(props) =>
+    props.isSelected
+      ? palette.textActiveWhite
+      : props.iconColor
+        ? props.iconColor
+        : palette.textInactive};
 
   &:hover {
-    background: ${(props) =>
-      props.isSelected ? palette.borderGrey : palette.hoverGrey};
+    background: ${palette.hoverGrey};
+    color: ${palette.textActiveWhite};
   }
 `

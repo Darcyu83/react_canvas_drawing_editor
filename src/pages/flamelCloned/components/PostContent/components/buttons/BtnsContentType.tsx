@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import TextBtn from '../../../../../components/button/TextBtn'
-import { CommFlexRowContainer } from '../../../../../styles/commonStyled'
+import { CommFlexRowContainer } from '../../../../../../styles/commonStyled'
+import TextBtn from '../../../../../../components/button/TextBtn'
 
 interface IProps {}
 
@@ -11,11 +11,11 @@ const btnConfigs = [
 
 type TBtnKeys = (typeof btnConfigs)[number]['key']
 
-function BtnsForInputMode(props: IProps) {
+function BtnsContentType(props: IProps) {
   const [btnKey, setBtnKey] = useState<TBtnKeys>('textOnly')
   return (
     <CommFlexRowContainer
-      gap={8}
+      gap={'0.5rem'}
       style={{
         position: 'absolute',
         left: '50%',
@@ -25,6 +25,7 @@ function BtnsForInputMode(props: IProps) {
       {btnConfigs.map((config) => {
         return (
           <TextBtn
+            key={config.label}
             label={config.label}
             isSelected={btnKey === config.key}
             onClick={() => {
@@ -33,7 +34,7 @@ function BtnsForInputMode(props: IProps) {
             style={{
               padding: 4,
               width: 150,
-              borderRadius: 12,
+              borderRadius: 13,
             }}
           />
         )
@@ -42,4 +43,4 @@ function BtnsForInputMode(props: IProps) {
   )
 }
 
-export default BtnsForInputMode
+export default BtnsContentType

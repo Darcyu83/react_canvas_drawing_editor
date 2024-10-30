@@ -1,6 +1,8 @@
-import { CommFlexColContainer } from '../../styles/commonStyled'
-import PostContent from './components/PostContent'
+import { Suspense } from 'react'
+import { CommFlexColContainer, CommText } from '../../styles/commonStyled'
+import PostContentForm from './components/PostContent'
 import Posts from './components/Posts'
+import { palette } from '../../styles/palette'
 
 interface IProps {}
 
@@ -8,10 +10,20 @@ function FlamelCloned(props: IProps) {
   return (
     <CommFlexColContainer padding={4}>
       {/* Post Form and buttons */}
-      <PostContent />
+      <PostContentForm />
 
       {/* 포스트 리스트 */}
-      <Posts />
+      <CommFlexColContainer style={{ minHeight: 100 }}>
+        <Suspense
+          fallback={
+            <CommText fontSize={20} color={palette.textPrimary}>
+              Loading data...(2sec)
+            </CommText>
+          }
+        >
+          <Posts />
+        </Suspense>
+      </CommFlexColContainer>
     </CommFlexColContainer>
   )
 }

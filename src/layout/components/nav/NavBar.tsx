@@ -6,7 +6,7 @@ interface IProps {}
 
 function NavBar(props: IProps) {
   return (
-    <NavBarContainer gap={24}>
+    <NavBarContainer gap={'1.5rem'}>
       {NavBarConfigs.map((config, idx) => {
         return <NavBarItem key={config.label} config={config} />
       })}

@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react'
-import { CommBtn } from '../../styles/commonStyled'
+import { CommBtn, CommText } from '../../styles/commonStyled'
 
 interface IProps {
   label: string
@@ -16,7 +16,7 @@ function TextBtn({ label, onClick, style, isSelected }: IProps) {
       isSelected={isSelected}
       style={{ ...style }}
     >
-      {label}
+      <CommText fontSize={18}>{label}</CommText>
     </CommBtn>
   )
 }

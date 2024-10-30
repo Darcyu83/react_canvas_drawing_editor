@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import SVGBtn from '../../../../../components/button/SVGBtn'
-import IconBlingBlingSVG from '../../../../../components/icon/IconBlingBlingSVG'
-import IconEraserSVG from '../../../../../components/icon/IconEraserSVG'
-import IconExchangeSVG from '../../../../../components/icon/IconExchangeSVG'
-import { CommFlexRowContainer } from '../../../../../styles/commonStyled'
-import { palette } from '../../../../../styles/palette'
+import SVGBtn from '../../../../../../components/button/SVGBtn'
+import IconBlingBlingSVG from '../../../../../../components/icon/IconBlingBlingSVG'
+import IconEraserSVG from '../../../../../../components/icon/IconEraserSVG'
+import IconExchangeSVG from '../../../../../../components/icon/IconExchangeSVG'
+import { CommFlexRowContainer } from '../../../../../../styles/commonStyled'
+import { palette } from '../../../../../../styles/palette'
 
 interface IProps {}
 
@@ -19,7 +19,7 @@ const btnConfigs = [
 ] as const
 type TBtnKeys = (typeof btnConfigs)[number]['key']
 
-function BtnsForPrompt(props: IProps) {
+function BtnsPromptSupport(props: IProps) {
   const [btnArrActivated, setBtnArrActivated] = useState<TBtnKeys[]>(['clear'])
 
   const onClick = (_key: TBtnKeys) => {
@@ -34,6 +34,7 @@ function BtnsForPrompt(props: IProps) {
       className="border_outlined"
       width={'fit-content'}
       padding={2}
+      style={{ marginLeft: 25 }}
     >
       {btnConfigs.map((config) => {
         return (
@@ -44,8 +45,8 @@ function BtnsForPrompt(props: IProps) {
             }
             iconColor={
               btnArrActivated.includes(config.key)
-                ? 'inherit'
-                : palette.borderGreyLight
+                ? 'white'
+                : palette.textInactive
             }
           >
             {config.child}
@@ -56,4 +57,4 @@ function BtnsForPrompt(props: IProps) {
   )
 }
 
-export default BtnsForPrompt
+export default BtnsPromptSupport

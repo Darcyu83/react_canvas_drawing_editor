@@ -4,39 +4,46 @@ import {
   CommFlexRowContainer,
   CommText,
 } from '../../../../../styles/commonStyled'
+import BtnsInputFooter from './buttons/BtnsInputFooter'
 
 interface IProps {}
 
 const TEXTAREA_HEIGHT = 100
 function PostInput(props: IProps) {
   return (
-    <CommFlexRowContainer
-      gap={16}
-      height={'fit-content'}
-      justifyContent="space-between"
-    >
-      <CommFlexRowContainer>←</CommFlexRowContainer>
-      <CommFlexColContainer width={'100%'} height={'100%'} gap={4}>
-        <CommFlexColContainer className="border_outlined" padding={4}>
-          <textarea
-            style={{
-              width: '100%',
-              height: TEXTAREA_HEIGHT,
-            }}
-            minLength={10}
-          />
+    <form action="">
+      <CommFlexRowContainer
+        gap={'1rem'}
+        height={'fit-content'}
+        justifyContent="space-between"
+      >
+        <CommFlexRowContainer>←</CommFlexRowContainer>
+        <CommFlexColContainer width={'100%'} height={'100%'} gap={'0.25rem'}>
+          <CommFlexColContainer
+            className="border_outlined"
+            padding={4}
+            gap={'0.5rem'}
+          >
+            <textarea
+              style={{
+                width: '100%',
+                height: TEXTAREA_HEIGHT,
+              }}
+              minLength={10}
+            />
 
-          <CommFlexRowContainer></CommFlexRowContainer>
+            <BtnsInputFooter />
+          </CommFlexColContainer>
+
+          <CommFlexRowContainer justifyContent="flex-end" gap={'0.25rem'}>
+            <IconExclamationMarkSVG />
+            <CommText fontSize={16}>About</CommText>
+          </CommFlexRowContainer>
         </CommFlexColContainer>
 
-        <CommFlexRowContainer justifyContent="flex-end" gap={4}>
-          <IconExclamationMarkSVG />
-          <CommText fontSize={16}>About</CommText>
-        </CommFlexRowContainer>
-      </CommFlexColContainer>
-
-      <CommFlexRowContainer>🗑️</CommFlexRowContainer>
-    </CommFlexRowContainer>
+        <CommFlexRowContainer>🗑️</CommFlexRowContainer>
+      </CommFlexRowContainer>
+    </form>
   )
 }
 

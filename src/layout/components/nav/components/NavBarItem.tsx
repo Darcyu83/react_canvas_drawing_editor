@@ -16,13 +16,12 @@ function NavBarItem({ config }: IProps) {
           padding: '2px 4px 4px',
           fontSize: 20,
           fontWeight: isActive ? 'bold' : undefined,
-          color: isActive ? palette.textPrimary : 'inherit',
-
+          color: isActive ? palette.textPrimary : undefined,
           borderBottom: `2px solid ${isActive ? palette.textPrimary : 'transparent'}`,
         }
       }}
     >
-      <strong>{config.label}</strong>
+      {config.label}
     </NavLink>
   )
 }

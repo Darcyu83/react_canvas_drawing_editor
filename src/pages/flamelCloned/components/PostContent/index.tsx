@@ -2,19 +2,20 @@ import {
   CommFlexColContainer,
   CommFlexRowContainer,
 } from '../../../../styles/commonStyled'
-import BtnsForInputMode from './components/BtnsForInputMode'
-import BtnsForPrompt from './components/BtnsForPrompt'
+
+import BtnsPromptSupport from './components/buttons/BtnsPromptSupport'
+import BtnsContentType from './components/buttons/BtnsContentType'
 import PostInput from './components/PostInput'
 
 interface IProps {}
 
-function PostContent(props: IProps) {
+function PostContentForm(props: IProps) {
   return (
-    <CommFlexColContainer gap={20}>
+    <CommFlexColContainer gap={'1.2rem'}>
       {/* 버튼's */}
-      <CommFlexRowContainer gap={16}>
-        <BtnsForPrompt />
-        <BtnsForInputMode />
+      <CommFlexRowContainer gap={'1rem'}>
+        <BtnsPromptSupport />
+        <BtnsContentType />
       </CommFlexRowContainer>
 
       {/* 인풋 */}
@@ -23,4 +24,4 @@ function PostContent(props: IProps) {
   )
 }
 
-export default PostContent
+export default PostContentForm
