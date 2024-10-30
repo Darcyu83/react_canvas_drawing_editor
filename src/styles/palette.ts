@@ -7,9 +7,10 @@ export const palette = {
   bgActive: 'rgb(95, 99, 104, 1)',
 
   lightGrey: 'lightgrey',
-
   grey: 'grey',
   darkGrey: 'darkgrey',
-
   hoverGrey: 'rgba(40, 42, 45, 1)',
+  iconBg: 'rgb(95, 99, 104, 0.5)',
+
+  textBg: '#17191A',
 } as const

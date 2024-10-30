@@ -1,4 +1,5 @@
 import IconExclamationMarkSVG from '../../../../../components/icon/IconExclamationMarkSVG'
+import TextAreaOutlined from '../../../../../components/input/textarea/TextAreaOutlined'
 import {
   CommFlexColContainer,
   CommFlexRowContainer,
@@ -8,8 +9,7 @@ import BtnsInputFooter from './buttons/BtnsInputFooter'
 
 interface IProps {}
 
-const TEXTAREA_HEIGHT = 100
-function PostInput(props: IProps) {
+function PostInput({}: IProps) {
   return (
     <form action="">
       <CommFlexRowContainer
@@ -19,21 +19,9 @@ function PostInput(props: IProps) {
       >
         <CommFlexRowContainer>←</CommFlexRowContainer>
         <CommFlexColContainer width={'100%'} height={'100%'} gap={'0.25rem'}>
-          <CommFlexColContainer
-            className="border_outlined"
-            padding={4}
-            gap={'0.5rem'}
-          >
-            <textarea
-              style={{
-                width: '100%',
-                height: TEXTAREA_HEIGHT,
-              }}
-              minLength={10}
-            />
-
+          <TextAreaOutlined>
             <BtnsInputFooter />
-          </CommFlexColContainer>
+          </TextAreaOutlined>
 
           <CommFlexRowContainer justifyContent="flex-end" gap={'0.25rem'}>
             <IconExclamationMarkSVG />

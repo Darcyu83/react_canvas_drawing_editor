@@ -1,16 +1,30 @@
+import { ReactNode } from 'react'
 import { CardContainer } from './styles'
+import { IPostListItem } from '../../../../../api/post/types'
 
 interface IProps {
-  info: {
-    id: number
-    imgUrl: string
-  }
+  onClick: React.Dispatch<React.SetStateAction<number | undefined>>
+  children?: ReactNode
+  postInfo: IPostListItem
+  isSelected?: boolean
 }
 
-function PostSimlePhotoCard({ info }: IProps) {
+function PostSimlePhotoCard({
+  postInfo,
+  children,
+  onClick,
+  isSelected,
+}: IProps) {
   return (
-    <CardContainer style={{}} imgUrl={info.imgUrl}>
-      <h1>PostSimlePhotoCard</h1>
+    <CardContainer
+      style={{}}
+      isSelected={isSelected}
+      imgUrl={postInfo.imgUrl}
+      onClick={() => {
+        onClick(postInfo.id)
+      }}
+    >
+      {children}
     </CardContainer>
   )
 }

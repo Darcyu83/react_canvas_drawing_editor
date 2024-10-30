@@ -27,7 +27,6 @@ function BtnsInputFooter(props: IProps) {
           justifyContent="center"
           style={{ color: 'white' }}
         >
-          <CommText color="transparent">`</CommText>
           <IconMaginWantSVG />
         </RoundBadgeContainer>
       </CommFlexRowContainer>

@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import { palette } from './palette'
 
 /**
  * 글로벌 리셋 CSS + 글로벌 클래스
@@ -134,5 +135,9 @@ export const resetCss = css`
   .border_outlined {
     border-radius: 4px;
     border: 1px solid var(--border-grey-light);
+  }
+
+  .hover_icon:hover {
+    background: ${palette.textInactive};
   }
 `

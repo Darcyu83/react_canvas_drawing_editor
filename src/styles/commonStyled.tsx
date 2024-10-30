@@ -13,14 +13,15 @@ export const CommText = styled.p<{
 export const CommFlexRowContainer = styled.div<{
   flexWrap?: CSSProperties['flexWrap']
   justifyContent?: CSSProperties['justifyContent']
+  alignItems?: CSSProperties['alignItems']
   gap?: CSSProperties['gap']
   padding?: CSSProperties['padding']
   width?: CSSProperties['width']
   height?: CSSProperties['height']
 }>`
   display: flex;
-  align-items: center;
   justify-content: ${(props) => props.justifyContent};
+  align-items: ${(props) => props.alignItems ?? 'center'};
   flex-wrap: ${(props) => props.flexWrap};
 
   gap: ${(props) => getStylePxStrValue(props.gap)};
@@ -32,6 +33,7 @@ export const CommFlexRowContainer = styled.div<{
 
 export const CommFlexColContainer = styled.div<{
   flexWrap?: CSSProperties['flexWrap']
+  justifyContent?: CSSProperties['justifyContent']
   alignItems?: CSSProperties['alignItems']
   gap?: CSSProperties['gap']
   padding?: CSSProperties['padding']
@@ -40,8 +42,9 @@ export const CommFlexColContainer = styled.div<{
 }>`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: ${(props) => props.justifyContent ?? 'center'};
   align-items: ${(props) => props.alignItems};
+
   flex-wrap: ${(props) => props.flexWrap};
 
   gap: ${(props) => getStylePxStrValue(props.gap)};
