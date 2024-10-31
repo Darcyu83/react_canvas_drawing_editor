@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { CSSProperties } from 'react'
 import { getStylePxStrValue } from './utils'
 import { palette } from './palette'
+import { css } from '@emotion/react'
 
 export const CommText = styled.p<{
   color?: CSSProperties['color']
@@ -11,6 +12,8 @@ export const CommText = styled.p<{
   font-size: ${(props) => getStylePxStrValue(props.fontSize)};
 `
 export const CommFlexRowContainer = styled.div<{
+  checkArea?: boolean // 개발자 영역체크용
+
   flexWrap?: CSSProperties['flexWrap']
   justifyContent?: CSSProperties['justifyContent']
   alignItems?: CSSProperties['alignItems']
@@ -29,9 +32,17 @@ export const CommFlexRowContainer = styled.div<{
 
   width: ${(props) => getStylePxStrValue(props.width)};
   height: ${(props) => getStylePxStrValue(props.height)};
+
+  ${({ checkArea }) =>
+    checkArea &&
+    css`
+      border: 1px solid red;
+    `}
 `
 
 export const CommFlexColContainer = styled.div<{
+  checkArea?: boolean // 개발자 영역체크용
+
   flexWrap?: CSSProperties['flexWrap']
   justifyContent?: CSSProperties['justifyContent']
   alignItems?: CSSProperties['alignItems']
@@ -52,6 +63,12 @@ export const CommFlexColContainer = styled.div<{
 
   width: ${(props) => getStylePxStrValue(props.width)};
   height: ${(props) => getStylePxStrValue(props.height)};
+
+  ${({ checkArea }) =>
+    checkArea &&
+    css`
+      border: 1px solid red;
+    `}
 `
 
 export const CommBtn = styled.button<{

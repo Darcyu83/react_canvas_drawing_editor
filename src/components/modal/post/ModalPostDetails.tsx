@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import ModalFoundation from '../components/ModalFoundation'
 import PostPhotoCard from './component/PostPhotoCardWithBtns'
 import { getPostList } from '../../../api/post'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import PostListCarousel from './component/PostListCarousel'
 import PostContentCard from './component/PostContentCard'
 import { PostDetailsCardContainer } from './styles'
@@ -35,16 +35,16 @@ function ModalPostDetails({ selectedPostIdToOpen, isOpen, onClose }: IProps) {
     return { postInfo: postList[postInfoIdx], postInfoIdx }
   }, [postList, selectedPostId])
 
-  useEffect(() => {
-    return () => {
-      setSelectedInternalPostId(undefined)
-    }
-  }, [])
+  const onCloseModal = () => {
+    setSelectedInternalPostId(undefined)
+
+    onClose()
+  }
   return (
-    <ModalFoundation isOpen={isOpen} onClose={onClose}>
+    <ModalFoundation isOpen={isOpen} onClose={onCloseModal}>
       {/* 닫기버튼 */}
       <div
-        onClick={onClose}
+        onClick={onCloseModal}
         style={{ position: 'absolute', right: 10, top: 10 }}
       >
         <BadgeGrayTransparent>

@@ -17,6 +17,7 @@ import {
   MdContentCopy,
   MdAttachMoney,
 } from 'react-icons/md'
+import { FaRegClone } from 'react-icons/fa'
 
 interface IProps {
   postInfo: IPostListItem | undefined
@@ -106,6 +107,7 @@ function PostContentCard({ postInfo }: IProps) {
             gap={4}
             style={{ height: 24 }}
           >
+            <FaRegClone size={24} />
             <MdContentCopy size={24} />
             <CommText>Copy image</CommText>
           </CommFlexRowContainer>

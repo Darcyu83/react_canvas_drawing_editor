@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
-import { OverlayContainer } from './styles'
-import { CommFlexRowContainer } from '../../../styles/commonStyled'
+import { ContentInvisibleContainer, OverlayContainer } from './styles'
 
 interface IProps {
   onClose: () => void
@@ -11,13 +10,9 @@ interface IProps {
 function ModalFoundation({ isOpen, onClose, children }: IProps) {
   return (
     <OverlayContainer style={{}} isOpen={isOpen} onClick={onClose}>
-      <CommFlexRowContainer
-        width={'100%'}
-        height={'100%'}
-        justifyContent="center"
-      >
+      <ContentInvisibleContainer isOpen={isOpen}>
         {children}
-      </CommFlexRowContainer>
+      </ContentInvisibleContainer>
     </OverlayContainer>
   )
 }

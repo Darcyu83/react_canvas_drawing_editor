@@ -1,10 +1,19 @@
+import { CommFlexColContainer } from '../../styles/commonStyled'
+import EditorBtns from './components/EditorHeader/EditorBtns'
+
 interface IProps {}
 
 function PaintEditor(props: IProps) {
   return (
-    <div style={{}}>
-      <h1>PaintEditor</h1>
-    </div>
+    <CommFlexColContainer
+      justifyContent="start"
+      padding={8}
+      height={'100%'}
+      checkArea
+      style={{}}
+    >
+      <EditorBtns />
+    </CommFlexColContainer>
   )
 }
 
