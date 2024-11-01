@@ -54,14 +54,16 @@ export const resetCss = css`
 	  display: block;
   }
 
-  /* *,
-  html, */
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     font-family: 'Dongle', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
-    box-sizing: border-box;
+
     background: var(--background);
     color: var(--text);
   }

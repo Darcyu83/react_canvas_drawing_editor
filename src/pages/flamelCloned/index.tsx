@@ -16,8 +16,8 @@ function FlamelCloned(props: IProps) {
       <CommFlexColContainer style={{ minHeight: 100 }}>
         <Suspense
           fallback={
-            <CommText fontSize={20} color={palette.textPrimary}>
-              Loading data...(2sec)
+            <CommText fontSize={20} color={palette.textActiveWhite}>
+              Loading data...(1sec)
             </CommText>
           }
         >

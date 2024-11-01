@@ -13,7 +13,7 @@ interface IProps {}
 
 const MainLayout = lazy(() => import('../layout/MainLayout'))
 const FlamelCloned = lazy(() => import('../pages/flamelCloned'))
-const PaintEditor = lazy(() => import('../pages/paintEditor'))
+const PaintEditor = lazy(() => import('../pages/drawing'))
 
 const routerProps: RouteObject[] = [
   {

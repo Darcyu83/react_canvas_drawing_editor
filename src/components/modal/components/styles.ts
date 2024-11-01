@@ -3,7 +3,6 @@ import { CommFlexRowContainer } from '../../../styles/commonStyled'
 import { keyframes } from '@emotion/react'
 
 const opacity = keyframes`
-
 from {
     opacity: 1;
   }

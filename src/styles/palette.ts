@@ -13,4 +13,6 @@ export const palette = {
   iconBg: 'rgb(95, 99, 104, 0.5)',
 
   textBg: '#17191A',
+
+  red: '#f00',
 } as const

@@ -9,16 +9,15 @@ import {
   FaRegCircle,
   FaSave,
 } from 'react-icons/fa'
+import { TEditorToolTypeDrawing } from '../../../../context/paintEditorContext/types'
 
 type TEditorBtnKeys =
   | 'back'
   | 'forward'
-  | 'dropper'
-  | 'pen'
-  | 'eraser'
-  | 'square'
-  | 'circle'
   | 'save'
+  | 'colorPicker'
+  | 'spoide'
+  | TEditorToolTypeDrawing
 
 interface IEditorBtnConfig {
   key: TEditorBtnKeys
@@ -29,7 +28,8 @@ interface IEditorBtnConfig {
 export const buttonConfigs: IEditorBtnConfig[] = [
   { key: 'back', label: '뒤로', icon: <FaStepBackward size={24} /> },
   { key: 'forward', label: '앞으로', icon: <FaStepForward size={24} /> },
-  { key: 'dropper', label: '스포이드', icon: <FaEyeDropper size={24} /> },
+  { key: 'colorPicker', label: '색상선택', icon: undefined },
+  { key: 'spoide', label: '스포이드', icon: <FaEyeDropper size={24} /> },
   { key: 'pen', label: '펜', icon: <FaPen size={24} /> },
   { key: 'eraser', label: '지우개', icon: <FaEraser size={24} /> },
   { key: 'square', label: '사각형', icon: <FaRegSquare size={24} /> },

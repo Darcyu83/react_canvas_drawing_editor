@@ -27,7 +27,7 @@ export const getPostList = async () => {
   await new Promise((res, rej) => {
     setTimeout(() => {
       res(true)
-    }, 2000)
+    }, 1000)
   })
 
   return dummyData
