@@ -49,7 +49,6 @@ class PaintEditorSingleton {
   ): void {
     const prevHistory = this.editorStatesHistory.get(canvasId)
 
-    console.log('history ==== ', newState, prevHistory)
 
     const history: IEditorStateHistory = {
       ...(prevHistory ? prevHistory : initialStateOfIEditorStateHis),
@@ -70,10 +69,7 @@ class PaintEditorSingleton {
     history.current = history.past.pop()
     this.editorStatesHistory.set(canvasId, history)
 
-    console.log(
-      'class setHistoryBackward',
-      this.getEditorStateByCanvasId(canvasId)
-    )
+  
     return this.getEditorStateByCanvasId(canvasId)
   }
 
@@ -86,10 +82,7 @@ class PaintEditorSingleton {
     history.current = history.future.pop()
     this.editorStatesHistory.set(canvasId, history)
 
-    console.log(
-      'class setHistoryforward',
-      this.getEditorStateByCanvasId(canvasId)
-    )
+   
     return this.getEditorStateByCanvasId(canvasId)
   }
 

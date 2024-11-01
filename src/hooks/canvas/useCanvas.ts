@@ -26,16 +26,16 @@ function useCanvas({
     img.src = dataUrl
 
     const result = await waitForImgLoaded(img)
-    console.log('drawCanvasWithDataUrl 0')
+    
     if (!result) {
       throw new Error('Error:: 이미지 로딩중 오류발생:')
     }
 
-    console.log('drawCanvasWithDataUrl 1')
+    
     const canvas = canvasRef.current
     const ctx = canvas?.getContext('2d')
     if (!canvas || !ctx) return
-    console.log('drawCanvasWithDataUrl 3')
+    
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
   }
@@ -56,7 +56,7 @@ function useCanvas({
   }
 
   const startDrawing = (x: number, y: number) => {
-    console.log('start drawing')
+    
     isDrawingRef.current = true
     startCoords.current = { x, y }
     const context = getCanvasContext()
@@ -70,7 +70,7 @@ function useCanvas({
   }
 
   const stopDrawing = () => {
-    console.log('stop drawing')
+    
     isDrawingRef.current = false
     startCoords.current = null
   }
@@ -81,7 +81,7 @@ function useCanvas({
     if (!context || !isDrawingRef.current || !startCoords.current) return
     // const { x: startX, y: startY } = startCoords.current
 
-    console.log('drawing line')
+    
 
     context.strokeStyle = strokeColor
     context.lineTo(endX, endY)

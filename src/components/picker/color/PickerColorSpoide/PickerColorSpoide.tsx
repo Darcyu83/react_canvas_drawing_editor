@@ -24,7 +24,7 @@ function PickerColorSpoide({ icon, color, setColor }: IProps) {
   const onHandleMouseMove = async (e: MouseEvent) => {
     if (!isPicking) return
 
-    console.log('isPicking ', isPicking)
+    
 
     const canvas = canvasRef.current
     if (canvas) {
@@ -47,7 +47,7 @@ function PickerColorSpoide({ icon, color, setColor }: IProps) {
   const debounceMouseMove = (e: MouseEvent) => {
     if (debounceRef.current) clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(() => {
-      console.log('debounceMouseMove')
+      
       onHandleMouseMove(e)
       debounceRef.current = null
     }, 200)

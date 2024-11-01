@@ -18,8 +18,6 @@ function usePaintEditor({ canvasId }: IProps = {}) {
     useState<TEditorToolTypeDrawing>(currState.toolTypeDrawing)
 
   const saveEditorStatus = useCallback(() => {
-    console.log('prev === img ')
-    console.log('img === img ', currState.imgData === imgData)
 
     const newState: IEditorState = {
       index: currState.index + 1,
@@ -34,13 +32,11 @@ function usePaintEditor({ canvasId }: IProps = {}) {
 
   const onUndo = useCallback(() => {
     const newState = paintEditorInstance.setHistoryBackward(_canvasId)
-    console.log('onUndo === ', newState)
     setEditorState(newState)
   }, [_canvasId])
 
   const onRedo = useCallback(() => {
     const newState = paintEditorInstance.setHistoryforward(_canvasId)
-    console.log('onRedo === ', newState)
     setEditorState(newState)
   }, [_canvasId])
 

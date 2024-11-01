@@ -4,13 +4,20 @@
 
 ### run
 
+- npm install
 - npm run dev
 
 ### port
 
-- 3013
+- 3000
+
+### url
+
+http://localhost:3000
 
 ### 특이사항
 
-- PickerColor component deprecated waning
 - library : react-input-color
+- PickerColor component deprecated waning => 처리 필요
+
+- npm install시 디펜던시 버전 충돌 => 해결필요.

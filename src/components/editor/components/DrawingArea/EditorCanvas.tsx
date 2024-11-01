@@ -64,7 +64,7 @@ function EditorCanvas({
     const canvas = canvasRef.current
     const currentImgData = canvas?.toDataURL()
 
-    console.log('currentImgData !== imgData == ', currentImgData !== imgData)
+    
     const upodateCanvas = async () => {
       if (!!imgData && currentImgData !== imgData) {
         // if (imgData) {
