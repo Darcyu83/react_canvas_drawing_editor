@@ -9,7 +9,6 @@ interface IProps {
 }
 
 function PickerColor({ color = palette.red, setColorPicked }: IProps) {
-  
   return (
     <PreviewWrapper>
       <InputColor

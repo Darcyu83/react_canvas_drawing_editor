@@ -64,7 +64,6 @@ function EditorCanvas({
     const canvas = canvasRef.current
     const currentImgData = canvas?.toDataURL()
 
-    
     const upodateCanvas = async () => {
       if (!!imgData && currentImgData !== imgData) {
         // if (imgData) {
@@ -76,6 +75,7 @@ function EditorCanvas({
   }, [imgData])
 
   const imgRef = useRef<HTMLImageElement | null>(null)
+
   // 초기 이미지 로딩 + 히스토리 1스택
   useEffect(() => {
     const setInitialImage = async () => {

@@ -44,6 +44,7 @@ function PostListCarousel({
       {postList?.map((info) => {
         return (
           <PostSimlePhotoCard
+            key={info.id}
             postInfo={info}
             onClick={setPostId}
             isSelected={info.id === selectedPostId}
